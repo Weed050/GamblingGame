@@ -27,9 +27,11 @@ namespace GamblingGame
         }
         public bool PlaceBet(int Amount,int DogToWin)
         {
+            MyBet = new Bet();
             MyBet.Amount = Amount;
+            //Cash -= Amount;
             MyBet.Dog = DogToWin;
-            MyBet.Bettor =;
+            MyBet.Bettor = this;
             if (Amount > Cash)
             {
                 return false;
@@ -38,6 +40,11 @@ namespace GamblingGame
             {
                 return true;
             }
+        }
+        public void Collect(int winner)
+        {
+            MyBet.Dog = winner;
+           Cash += MyBet.Amount * 2;
         }
     }
 }

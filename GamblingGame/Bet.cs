@@ -14,7 +14,7 @@ namespace GamblingGame
         public Guy Bettor;
         public string GetDescription()
         {
-           return "Stawiam na " + Dog + " " +Amount + "zł.\n" +Bettor;
+           return "Stawiam na " + Dog + " " +Amount + "zł.\n" +Bettor.Name;
         }
         public int PayOut(int Winner)
         {
