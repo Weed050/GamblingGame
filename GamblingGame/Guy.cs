@@ -46,8 +46,8 @@ namespace GamblingGame
         }
         public void Collect(int winner)
         {
-            MessageBox.Show("Prosimy dokonać wypłaty.");
-            //
+            MessageBox.Show("Wygrał pies o numerze "+winner+".","Prosimy dokonać wypłaty.");
+            
         }
     }
 }

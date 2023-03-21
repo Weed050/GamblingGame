@@ -3,6 +3,7 @@ namespace GamblingGame
     public partial class Form1 : Form
     {
         GreyHound[] GreyHoundArray = new GreyHound[4];
+        Guy[] GuyArray = new Guy[3];
         public Form1()
         {
             InitializeComponent();
@@ -38,19 +39,18 @@ namespace GamblingGame
                 //Randomizer = MyRandomizer
             };
 
-            //Guy[] GuyArray = new Guy[3];
-            //GuyArray[0] = new Guy()
-            //{
+            GuyArray[0] = new Guy()
+            {
 
-            //};
-            //GuyArray[1] = new Guy()
-            //{
+            };
+            GuyArray[1] = new Guy()
+            {
 
-            //};
-            //GuyArray[2] = new Guy()
-            //{
+            };
+            GuyArray[2] = new Guy()
+            {
 
-            //};
+            };
         }
 
         public void timer1_Tick(object sender, EventArgs e)
@@ -60,7 +60,13 @@ namespace GamblingGame
                 if (GreyHoundArray[i].Run())
                 {
                    timer1.Stop();
-                    MessageBox.Show("Wygra³ pies o numerze: "+i+".");
+                    //MessageBox.Show("Wygra³ pies o numerze: "+i+".");
+                    for (int z = 0; z < 3; z++)
+                    {
+                        GuyArray[z].Collect(i);
+                       GuyArray[z].Cash += GuyArray[z].MyBet.PayOut(i);
+                    }
+                    
                 }
             }
 
