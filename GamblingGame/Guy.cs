@@ -43,8 +43,15 @@ namespace GamblingGame
         }
         public void Collect(int winner)
         {
-            MyBet.Dog = winner;
-           Cash += MyBet.Amount * 2;
+            MessageBox.Show("Prosimy dokonać wypłaty.");
+            if (MyBet.Dog == winner)
+            {
+                Cash += MyBet.Amount * 2;
+            }
+            else 
+            { 
+                Cash -= MyBet.Amount;
+            }
         }
     }
 }

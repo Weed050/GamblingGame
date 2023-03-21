@@ -14,7 +14,11 @@ namespace GamblingGame
         public Guy Bettor;
         public string GetDescription()
         {
-           return "Stawiam na " + Dog + " " +Amount + "zł.\n" +Bettor.Name;
+            if (Amount <= 0) return "Nie ustanowiono układu";
+            else
+            {
+                return "Stawiam na " + Dog + " " + Amount + "zł.\n" + Bettor.Name;
+            }
         }
         public int PayOut(int Winner)
         {
