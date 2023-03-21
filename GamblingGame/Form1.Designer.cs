@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             raceTrackPictureBox = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
@@ -35,6 +37,7 @@
             pictureBox1 = new PictureBox();
             radioButton1 = new RadioButton();
             label1 = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)raceTrackPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -44,41 +47,50 @@
             // 
             // raceTrackPictureBox
             // 
-            raceTrackPictureBox.Location = new Point(12, 67);
+            raceTrackPictureBox.Image = (Image)resources.GetObject("raceTrackPictureBox.Image");
+            raceTrackPictureBox.Location = new Point(28, 79);
             raceTrackPictureBox.Name = "raceTrackPictureBox";
-            raceTrackPictureBox.Size = new Size(776, 303);
+            raceTrackPictureBox.Size = new Size(733, 286);
             raceTrackPictureBox.TabIndex = 1;
             raceTrackPictureBox.TabStop = false;
             // 
             // pictureBox2
             // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(28, 157);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(125, 62);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new Point(28, 225);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(125, 62);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 3;
             pictureBox3.TabStop = false;
             // 
             // pictureBox4
             // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
             pictureBox4.Location = new Point(28, 293);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(125, 62);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 4;
             pictureBox4.TabStop = false;
             // 
             // pictureBox1
             // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(28, 89);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(125, 62);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 
@@ -101,6 +113,10 @@
             label1.Size = new Size(50, 20);
             label1.TabIndex = 7;
             label1.Text = "label1";
+            // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
             // 
             // Form1
             // 
@@ -133,5 +149,6 @@
         private PictureBox pictureBox1;
         private RadioButton radioButton1;
         private Label label1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

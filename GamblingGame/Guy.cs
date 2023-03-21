@@ -27,11 +27,14 @@ namespace GamblingGame
         }
         public bool PlaceBet(int Amount,int DogToWin)
         {
-            MyBet = new Bet();
-            MyBet.Amount = Amount;
-            //Cash -= Amount;
-            MyBet.Dog = DogToWin;
-            MyBet.Bettor = this;
+            MyBet = new Bet()
+            {
+                Amount = Amount,
+                Dog = DogToWin,
+                Bettor = this
+            };
+            Cash -= Amount;
+
             if (Amount > Cash)
             {
                 return false;
@@ -44,14 +47,7 @@ namespace GamblingGame
         public void Collect(int winner)
         {
             MessageBox.Show("Prosimy dokonać wypłaty.");
-            if (MyBet.Dog == winner)
-            {
-                Cash += MyBet.Amount * 2;
-            }
-            else 
-            { 
-                Cash -= MyBet.Amount;
-            }
+            //
         }
     }
 }

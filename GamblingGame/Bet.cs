@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,12 +18,19 @@ namespace GamblingGame
             if (Amount <= 0) return "Nie ustanowiono układu";
             else
             {
-                return "Stawiam na " + Dog + " " + Amount + "zł.\n" + Bettor.Name;
+                return Bettor.Name+ " stawia " + Amount + "zł na psa o numerze " + Dog + ".";
             }
         }
         public int PayOut(int Winner)
         {
-
+            if (Dog == Winner)
+            {
+                return Amount;
+            }
+            else
+            {
+               return -Amount;
+            }
         }
     }
 }
