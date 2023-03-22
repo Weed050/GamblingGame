@@ -69,6 +69,7 @@ namespace GamblingGame
             RadioButton1.Text = GuyArray[0].Name + " ma " + GuyArray[0].Cash + "z³";
             RadioButton2.Text = GuyArray[1].Name + " ma " + GuyArray[1].Cash + "z³";
             RadioButton3.Text = GuyArray[2].Name + " ma " + GuyArray[2].Cash + "z³";
+            NameLabel.Text = GuyArray[0].Name;
         }
 
         public void timer1_Tick(object sender, EventArgs e)
@@ -81,6 +82,7 @@ namespace GamblingGame
                     //MessageBox.Show("Wygra³ pies o numerze: "+i+".");
                     for (int z = 0; z < 3; z++)
                     {
+                        NameLabel.Text = GuyArray[0].Name;
                         GuyArray[z].Collect(i);
                         GuyArray[z].Cash += GuyArray[z].MyBet.PayOut(i);
                     }
@@ -106,12 +108,26 @@ namespace GamblingGame
                 {
                     if (GuyArray[i].MyRadioButton.Checked == true)
                     {
-                        GuyArray[i].PlaceBet(betAmount,betDog);
+                        GuyArray[i].PlaceBet(betAmount, betDog);
                         GuyArray[i].MyLabel.Text = GuyArray[i].MyBet.GetDescription();
+
+                        //if (GuyArray[i].PlaceBet(betAmount, betDog))
+                        //{
+                        //    GuyArray[i].MyLabel.Text = GuyArray[i].MyBet.GetDescription();
+                        //}
+                        //else
+                        //{
+
+                        //}
                     }
 
                 }
             }
+        }
+
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

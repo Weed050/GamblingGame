@@ -170,7 +170,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(252, 337);
+            label3.Location = new Point(217, 337);
             label3.Name = "label3";
             label3.Size = new Size(62, 20);
             label3.TabIndex = 11;
@@ -191,15 +191,14 @@
             NameLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             NameLabel.Location = new Point(31, 467);
             NameLabel.Name = "NameLabel";
-            NameLabel.Size = new Size(51, 20);
+            NameLabel.Size = new Size(0, 20);
             NameLabel.TabIndex = 13;
-            NameLabel.Text = "label2";
             // 
             // BetList1
             // 
             BetList1.AutoSize = true;
             BetList1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BetList1.Location = new Point(252, 362);
+            BetList1.Location = new Point(217, 360);
             BetList1.Name = "BetList1";
             BetList1.Size = new Size(51, 20);
             BetList1.TabIndex = 14;
@@ -209,7 +208,7 @@
             // 
             BetList2.AutoSize = true;
             BetList2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BetList2.Location = new Point(252, 390);
+            BetList2.Location = new Point(217, 388);
             BetList2.Name = "BetList2";
             BetList2.Size = new Size(51, 20);
             BetList2.TabIndex = 15;
@@ -219,7 +218,7 @@
             // 
             BetList3.AutoSize = true;
             BetList3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BetList3.Location = new Point(252, 422);
+            BetList3.Location = new Point(217, 420);
             BetList3.Name = "BetList3";
             BetList3.Size = new Size(51, 20);
             BetList3.TabIndex = 16;
@@ -248,12 +247,13 @@
             // buttonStart
             // 
             buttonStart.Font = new Font("Segoe UI", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonStart.Location = new Point(455, 337);
+            buttonStart.Location = new Point(522, 336);
             buttonStart.Name = "buttonStart";
             buttonStart.Size = new Size(266, 107);
             buttonStart.TabIndex = 20;
             buttonStart.Text = "Start";
             buttonStart.UseVisualStyleBackColor = true;
+            buttonStart.Click += buttonStart_Click;
             // 
             // PlaceBetButton
             // 

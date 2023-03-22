@@ -27,22 +27,26 @@ namespace GamblingGame
         }
         public bool PlaceBet(int Amount,int DogToWin)
         {
-            MyBet = new Bet()
-            {
-                Amount = Amount,
-                Dog = DogToWin,
-                Bettor = this
-            };
-            Cash -= Amount;
-
             if (Amount > Cash)
             {
+                MessageBox.Show("nie ustawiono");
                 return false;
-            }
-            else
+
+            } 
+            else 
             {
+                MyBet = new Bet()
+                {
+                    Amount = Amount,
+                    Dog = DogToWin,
+                    Bettor = this
+                };
+                Cash -= Amount;
+                MessageBox.Show("ustawiono");
+
                 return true;
             }
+
         }
         public void Collect(int winner)
         {

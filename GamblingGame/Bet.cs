@@ -15,11 +15,14 @@ namespace GamblingGame
         public Guy Bettor;
         public string GetDescription()
         {
-            if (Amount <= 0) return "Nie ustanowiono układu";
-            else
-            {
-                return Bettor.Name+ " stawia " + Amount + "zł na psa o numerze " + Dog + ".";
-            }
+            //if (Amount > Bettor.Cash)
+            //{
+            //    return "Nie ustanowiono układu";
+            //}
+            //else
+            //{
+                return Bettor.Name + " stawia " + Amount + "zł na psa o numerze " + Dog + ".";
+            //}
         }
         public int PayOut(int Winner)
         {
