@@ -51,6 +51,7 @@
             ChooseDog = new NumericUpDown();
             buttonStart = new Button();
             PlaceBetButton = new Button();
+            ResetButton = new Button();
             ((System.ComponentModel.ISupportInitialize)raceTrackPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -266,11 +267,22 @@
             PlaceBetButton.UseVisualStyleBackColor = true;
             PlaceBetButton.Click += PlaceBetButton_Click;
             // 
+            // ResetButton
+            // 
+            ResetButton.Location = new Point(645, 465);
+            ResetButton.Name = "ResetButton";
+            ResetButton.Size = new Size(143, 29);
+            ResetButton.TabIndex = 22;
+            ResetButton.Text = "zresetuj zakłady";
+            ResetButton.UseVisualStyleBackColor = true;
+            ResetButton.Click += ResetButton_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 504);
+            Controls.Add(ResetButton);
             Controls.Add(PlaceBetButton);
             Controls.Add(buttonStart);
             Controls.Add(ChooseDog);
@@ -327,5 +339,6 @@
         private NumericUpDown ChooseDog;
         private Button buttonStart;
         private Button PlaceBetButton;
+        private Button ResetButton;
     }
 }

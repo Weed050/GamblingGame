@@ -14,11 +14,20 @@ namespace GamblingGame
             RadioButton3.Text = GuyArray[2].Name + " ma " + GuyArray[2].Cash + "z³";
             NameLabel.Text = GuyArray[0].Name;
         }
+        public void ClearGambling()
+        {
+            for (int i = 0; i<3; i++)
+            {
+                GuyArray[i].ClearBet();
+                BetList1.Text = "";
+                BetList2.Text = "";
+                BetList3.Text = "";
+            }
+        }
         public Form1()
         {
             InitializeComponent();
             minimumBetLabel.Text = "Minimalny zak³ad za" + minimumBet + "z³";
-
 
 
             Random MyRandomizer = new Random();
@@ -75,6 +84,7 @@ namespace GamblingGame
                 MyLabel = BetList3
 
             };
+            ClearGambling();
 
             DisplayOnLabel();
         }
@@ -118,7 +128,7 @@ namespace GamblingGame
             if (numericUpDown1 != null && ChooseDog != null)
             {
                 int betAmount = (int)numericUpDown1.Value;
-                int betDog = (int)ChooseDog.Value -1;
+                int betDog = (int)ChooseDog.Value - 1;
                 for (int i = 0; i < 3; i++)
                 {
                     if (GuyArray[i].MyRadioButton.Checked == true)
@@ -144,6 +154,12 @@ namespace GamblingGame
         private void buttonStart_Click(object sender, EventArgs e)
         {
             timer1.Start();
+        }
+
+        private void ResetButton_Click(object sender, EventArgs e)
+        {
+            ClearGambling();
+            DisplayOnLabel();
         }
     }
 }
