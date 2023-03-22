@@ -134,6 +134,7 @@
             // 
             // timer1
             // 
+            timer1.Interval = 25;
             timer1.Tick += timer1_Tick;
             // 
             // minimumBetLabel

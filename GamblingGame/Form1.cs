@@ -1,3 +1,5 @@
+using System.Security.Cryptography.X509Certificates;
+
 namespace GamblingGame
 {
     public partial class Form1 : Form
@@ -5,10 +7,18 @@ namespace GamblingGame
         GreyHound[] GreyHoundArray = new GreyHound[4];
         Guy[] GuyArray = new Guy[3];
         int minimumBet = 5;
+        public void DisplayOnLabel()
+        {
+            RadioButton1.Text = GuyArray[0].Name + " ma " + GuyArray[0].Cash + "z³";
+            RadioButton2.Text = GuyArray[1].Name + " ma " + GuyArray[1].Cash + "z³";
+            RadioButton3.Text = GuyArray[2].Name + " ma " + GuyArray[2].Cash + "z³";
+            NameLabel.Text = GuyArray[0].Name;
+        }
         public Form1()
         {
             InitializeComponent();
             minimumBetLabel.Text = "Minimalny zak³ad za" + minimumBet + "z³";
+
 
 
             Random MyRandomizer = new Random();
@@ -66,10 +76,7 @@ namespace GamblingGame
 
             };
 
-            RadioButton1.Text = GuyArray[0].Name + " ma " + GuyArray[0].Cash + "z³";
-            RadioButton2.Text = GuyArray[1].Name + " ma " + GuyArray[1].Cash + "z³";
-            RadioButton3.Text = GuyArray[2].Name + " ma " + GuyArray[2].Cash + "z³";
-            NameLabel.Text = GuyArray[0].Name;
+            DisplayOnLabel();
         }
 
         public void timer1_Tick(object sender, EventArgs e)
@@ -84,7 +91,15 @@ namespace GamblingGame
                     {
                         NameLabel.Text = GuyArray[0].Name;
                         GuyArray[z].Collect(i);
-                        GuyArray[z].Cash += GuyArray[z].MyBet.PayOut(i);
+                        if (GuyArray[z].MyBet != null)
+                        {
+                            GuyArray[z].Cash += GuyArray[z].MyBet.PayOut(i);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nie postawiono zak³adów");
+                        }
+                        DisplayOnLabel();
                     }
 
                 }
@@ -103,13 +118,13 @@ namespace GamblingGame
             if (numericUpDown1 != null && ChooseDog != null)
             {
                 int betAmount = (int)numericUpDown1.Value;
-                int betDog = (int)ChooseDog.Value;
+                int betDog = (int)ChooseDog.Value -1;
                 for (int i = 0; i < 3; i++)
                 {
                     if (GuyArray[i].MyRadioButton.Checked == true)
                     {
                         //GuyArray[i].PlaceBet(betAmount, betDog);
-                        
+
                         //GuyArray[i].MyLabel.Text = GuyArray[i].MyBet.GetDescription();
 
                         if (GuyArray[i].PlaceBet(betAmount, betDog))
@@ -128,7 +143,7 @@ namespace GamblingGame
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
-
+            timer1.Start();
         }
     }
 }

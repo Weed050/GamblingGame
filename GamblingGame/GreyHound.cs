@@ -12,7 +12,7 @@ namespace GamblingGame
         public int RaceTrackLenght;
         public PictureBox MyPictureBox = null;
         public int Location = 0;
-        public Random MyRandom;
+        public Random MyRandom = new Random();
         public bool Run()
         {
             int rand = MyRandom.Next(5);

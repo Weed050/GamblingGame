@@ -21,7 +21,8 @@ namespace GamblingGame
             }
             else
             {
-                return Bettor.Name + " stawia " + Amount + "zł na psa o numerze " + Dog + ".";
+                int stringDog = Dog + 1;
+                return Bettor.Name + " stawia " + Amount + "zł na psa o numerze " + stringDog + ".";
             }
         }
         public int PayOut(int Winner)

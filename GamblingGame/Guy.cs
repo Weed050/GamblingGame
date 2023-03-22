@@ -45,13 +45,14 @@ namespace GamblingGame
                     Dog = DogToWin,
                     Bettor = this
                 };
-                Cash -= Amount;
+                //Cash -= Amount;
                 return true;
             }
 
         }
         public void Collect(int winner)
         {
+            winner += 1;
             MessageBox.Show("Wygrał pies o numerze "+winner+".","Prosimy dokonać wypłaty.");
             
         }
