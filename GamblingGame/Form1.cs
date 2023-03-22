@@ -108,17 +108,18 @@ namespace GamblingGame
                 {
                     if (GuyArray[i].MyRadioButton.Checked == true)
                     {
-                        GuyArray[i].PlaceBet(betAmount, betDog);
-                        GuyArray[i].MyLabel.Text = GuyArray[i].MyBet.GetDescription();
+                        //GuyArray[i].PlaceBet(betAmount, betDog);
+                        
+                        //GuyArray[i].MyLabel.Text = GuyArray[i].MyBet.GetDescription();
 
-                        //if (GuyArray[i].PlaceBet(betAmount, betDog))
-                        //{
-                        //    GuyArray[i].MyLabel.Text = GuyArray[i].MyBet.GetDescription();
-                        //}
-                        //else
-                        //{
-
-                        //}
+                        if (GuyArray[i].PlaceBet(betAmount, betDog))
+                        {
+                            GuyArray[i].MyLabel.Text = GuyArray[i].MyBet.GetDescription();
+                        }
+                        else
+                        {
+                            GuyArray[i].MyLabel.Text = "Nie ustanowiono uk³adu";
+                        }
                     }
 
                 }

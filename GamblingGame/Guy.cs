@@ -23,13 +23,17 @@ namespace GamblingGame
         }
         public void ClearBet()
         {
-            MyBet = null;
+            MyBet = new Bet()
+            {
+                Amount = 0,
+                Dog = 0,
+                Bettor = this
+            }; ;
         }
         public bool PlaceBet(int Amount,int DogToWin)
         {
             if (Amount > Cash)
             {
-                MessageBox.Show("nie ustawiono");
                 return false;
 
             } 
@@ -42,8 +46,6 @@ namespace GamblingGame
                     Bettor = this
                 };
                 Cash -= Amount;
-                MessageBox.Show("ustawiono");
-
                 return true;
             }
 
